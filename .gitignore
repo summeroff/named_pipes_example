@@ -1,0 +1,9 @@
+.vs/
+Debug/
+Debug*/
+Build/
+*.vcxproj*
+*.sln
+*.VC.db
+*.VC.VC.opendb
+/ipch/
