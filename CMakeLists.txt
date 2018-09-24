@@ -1,5 +1,19 @@
 cmake_minimum_required(VERSION 3.1)
+option(OVERLAPPED_MODE "Option description" OFF)
+option(PRINT_POCKET_INFO "Option description" OFF)
 project(SBAPP)
+
+if(OVERLAPPED_MODE)
+  message(STATUS "OVERLAPPED_MODE")
+  add_definitions(-DOVERLAPPED_MODE=1)
+  set(OVERLAPPED_MODE ON)
+endif()
+
+if(PRINT_POCKET_INFO)
+  message(STATUS "PRINT_POCKET_INFO")
+  add_definitions(-DPRINT_POCKET_INFO=1)
+  set(PRINT_POCKET_INFO ON)
+endif()
 
 set(BUILD_VC_TYPE "${CMAKE_BUILD_TYPE}")
 add_definitions(-DUNICODE -D_UNICODE)

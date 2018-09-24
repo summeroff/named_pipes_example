@@ -10,8 +10,17 @@
 
 const int BUFSIZE = 512;			//code disigned to work with 512 buffers. and will not work with big amount of data. also no check of size in code. 
 
+#ifdef OVERLAPPED_MODE
 const bool overlapped_mode = true;   //switch on overlapped mode to use pipe in asynconouse mode
-const bool print_pocket_info = false; //print more debug info about processed packet 
+#else
+const bool overlapped_mode = false;  
+#endif
+
+#ifdef PRINT_POCKET_INFO
+const bool print_pocket_info = true; //print more debug info about processed packet 
+#else
+const bool print_pocket_info = false;
+#endif
 
 namespace SBAPPLib {
 	/*
